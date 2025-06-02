@@ -141,9 +141,10 @@ bootstrap:
       parameters:
         archive_mode: "on"
         archive_command: /bin/true
-    pg_hba:
-      - host replication replicator 0.0.0.0/0 md5
-      - host all all 0.0.0.0/0 md5
+      pg_hba:
+        - local all all peer
+        - host replication replicator 0.0.0.0/0 md5
+        - host all all 0.0.0.0/0 md5
 
   initdb:
     - encoding: UTF8
